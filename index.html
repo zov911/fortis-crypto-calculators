@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fortis Calculators – Integration Guide</title>
+<meta name="description" content="Three crypto compliance calculators for Fortis AML Consulting, with links and embed code for the website.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fortis.css">
+<style>
+.guide{max-width:980px;margin:0 auto}
+.guide .qhero .lede{margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:8px 0 34px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.card .tc{width:48px;height:48px;border-radius:50%;background:var(--gold-tint);color:var(--gold-ink);display:grid;place-items:center;margin-bottom:12px}
+.card h2{font-family:var(--serif);font-size:21px;margin:0 0 6px;line-height:1.2}
+.card p{margin:0 0 14px;color:var(--muted);font-size:14.5px;flex:1}
+.card .url{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;word-break:break-all;margin-bottom:10px}
+.card .row-btns .btn{font-size:14px}
+h2.sec-h{font-family:var(--serif);font-size:26px;margin:34px 0 8px}
+.guide>p,.guide li{color:var(--muted)}
+.guide li{margin:4px 0}
+pre{position:relative;background:#0F1B33;color:#E9EEF5;border-radius:12px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.6;margin:10px 0 18px}
+pre code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}
+pre .cp{position:absolute;top:8px;right:8px;background:#B8893B;color:#fff;border:0;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:10px 0 18px}
+th,td{text-align:left;padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+th{background:var(--gold-tint);border-top:0;font-weight:700}
+td code,p code,li code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;background:var(--gold-tint);padding:1px 5px;border-radius:4px;color:var(--ink)}
+.tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brandbar">
+    <a class="logo" href="https://fortisamlconsulting.com/" target="_blank" rel="noopener" aria-label="Fortis AML Consulting home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 9v13c0 11.5 7.7 19.7 18 23 10.3-3.3 18-11.5 18-23V9z" fill="none" stroke="#B8893B" stroke-width="2.4"/><path d="M18 14h13M18 14v20M18 23h10" fill="none" stroke="#B8893B" stroke-width="3" stroke-linecap="round"/></svg>
+      <div><div class="w1">FORTIS</div><div class="w2">COMPLIANCE SHIELD PARTNERS</div></div>
+    </a>
+    <div class="tagline">CALCULATOR SUITE<br>INTEGRATION GUIDE</div>
+  </header>
+
+  <main class="guide">
+    <section class="qhero" style="text-align:left">
+      <h1 style="font-size:clamp(30px,4.6vw,46px)">Crypto compliance calculators</h1>
+      <p class="lede">Three lead-generation calculators, ready to share as links or to embed in any page of the website.</p>
+    </section>
+
+    <div class="cards" id="cards"></div>
+
+    <h2 class="sec-h">Embed on the website (recommended)</h2>
+    <p>Paste this where the calculator should appear. Works in WordPress (Custom HTML block), Webflow (Embed), Wix (Embed code), Squarespace (Code block) or plain HTML. The calculator resizes itself to fit, so there are no inner scrollbars.</p>
+    <pre><button class="cp" type="button">Copy</button><code id="snipEmbed"></code></pre>
+    <p>Use <code>cost</code>, <code>readiness</code> or <code>savings</code> in <code>data-fortis-calculator</code>. The script tag only needs to be on the page once, even with several calculators.</p>
+
+    <h3>Options</h3>
+    <div class="tbl"><table>
+      <tr><th>Attribute</th><th>Values</th><th>What it does</th></tr>
+      <tr><td><code>data-theme</code></td><td><code>light</code> / <code>dark</code></td><td>Forces a colour scheme. By default the calculator follows the visitor's system setting.</td></tr>
+      <tr><td><code>data-header</code></td><td><code>true</code></td><td>Shows the Fortis brand bar inside the embed (hidden by default because the site already has a header).</td></tr>
+      <tr><td><code>data-transparent</code></td><td><code>true</code></td><td>Transparent background, so the calculator sits on the page's own background.</td></tr>
+      <tr><td><code>data-scroll-offset</code></td><td>pixels, default <code>80</code></td><td>Height of a sticky site header, so pop-up forms are not hidden under it.</td></tr>
+      <tr><td><code>data-min-height</code></td><td>pixels</td><td>Space reserved before the calculator loads, to avoid layout jumps.</td></tr>
+    </table></div>
+
+    <h2 class="sec-h">Simple iframe (no script)</h2>
+    <p>If the site does not allow scripts, use a plain iframe with a fixed height. Auto-resize needs the script above.</p>
+    <pre><button class="cp" type="button">Copy</button><code id="snipFrame"></code></pre>
+
+    <h2 class="sec-h">Analytics</h2>
+    <p>Calculator events are pushed into the website's Google Tag Manager <code>dataLayer</code> with a <code>fortis_</code> prefix, so GTM triggers can be set up without touching the calculators. No personal data is ever sent to the host page.</p>
+    <div class="tbl"><table>
+      <tr><th>Event</th><th>When</th></tr>
+      <tr><td><code>fortis_calculator_start</code></td><td>First interaction</td></tr>
+      <tr><td><code>fortis_question_completed</code></td><td>Each answer (question id + answer)</td></tr>
+      <tr><td><code>fortis_estimate_viewed</code></td><td>Result shown (estimate / score)</td></tr>
+      <tr><td><code>fortis_pdf_clicked</code>, <code>fortis_proposal_clicked</code></td><td>Lead form opened</td></tr>
+      <tr><td><code>fortis_pdf_submitted</code>, <code>fortis_proposal_submitted</code>, <code>fortis_lead_submitted</code></td><td>Lead form submitted (conversion)</td></tr>
+      <tr><td><code>fortis_book_call_clicked</code>, <code>fortis_share_clicked</code></td><td>Booking link or share link used</td></tr>
+    </table></div>
+    <p>Each event also carries <code>fortis_calculator</code> (<code>crypto_cost</code>, <code>crypto_readiness</code> or <code>crypto_savings</code>). Developers can also listen for <code>fortis:event</code> and <code>fortis:lead</code> DOM events on the container.</p>
+
+    <h2 class="sec-h">Receiving leads</h2>
+    <p>Lead forms post a JSON payload (answers, estimate, UTM source and contact details) to one webhook URL — for example Make.com, Zapier, HubSpot or a CRM. Until it is connected the forms run in demo mode: the PDF still downloads, but no data is sent anywhere. Set <code>lead_endpoint</code> in <code>assets/fortis-core.js</code> to switch it on. Prices are in the same file.</p>
+  </main>
+  <p class="foot">© Fortis AML Consulting · <a href="https://fortisamlconsulting.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/fortis-core.js"></script>
+<script>
+(function(){
+var F=Fortis,base=location.origin+location.pathname.replace(/index\.html$/,"");
+var CALCS=[
+  {id:"cost",name:"Crypto Compliance Cost Calculator",desc:"7 questions. Instant first-year estimate for setup, FINTRAC registration and fractional CAMLO support.",icon:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8v3H8zM8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01M16 17h.01"/>'},
+  {id:"readiness",name:"Crypto Compliance Readiness Scorecard",desc:"12-question FINTRAC readiness check. Score, prioritised gaps, 90-day plan and cost to close them.",icon:'<path d="M12 3 4 6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>'},
+  {id:"savings",name:"Compliance Savings Calculator",desc:"30-second check. Full-time compliance officer vs. a Fortis fractional CAMLO, over 1 or 3 years.",icon:'<path d="M5 20v-6M10 20V9M15 20v-8M20 20V4"/>'}
+];
+document.getElementById("cards").innerHTML=CALCS.map(function(c){var u=base+c.id+"/";return '<div class="card"><div class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">'+c.icon+'</svg></div><h2>'+c.name+'</h2><p>'+c.desc+'</p><div class="url">'+u+'</div><div class="row-btns"><a class="btn btn-gold" href="'+u+'" target="_blank" rel="noopener">Open</a><button class="btn btn-line" type="button" data-copy="'+u+'">Copy link</button></div></div>'}).join("");
+document.getElementById("snipEmbed").textContent='<div data-fortis-calculator="cost"></div>\n<script src="'+base+'embed.js" async><\/script>';
+document.getElementById("snipFrame").textContent='<iframe src="'+base+'cost/?embed=1" title="Crypto Compliance Cost Calculator"\n        style="width:100%;height:1800px;border:0" loading="lazy"></iframe>';
+document.addEventListener("click",function(e){
+  var b=e.target.closest("[data-copy],.cp");if(!b)return;
+  var t=b.hasAttribute("data-copy")?b.getAttribute("data-copy"):b.parentNode.querySelector("code").textContent;
+  F.copy(t).then(function(){F.toast("Copied")},function(){F.toast("Could not copy")});
+});
+})();
+</script>
+</body>
+</html>

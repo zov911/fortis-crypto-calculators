@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crypto Compliance Savings Calculator | Fortis AML Consulting</title>
+<meta name="description" content="See in 30 seconds how much your crypto business can save with a fractional CAMLO from Fortis instead of hiring a full-time compliance officer in Canada.">
+<meta name="theme-color" content="#0F1B33">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How much can you save on compliance? | Fortis">
+<meta property="og:description" content="Compare a full-time compliance officer with a Fortis fractional CAMLO. Two clicks, instant answer.">
+<meta property="og:site_name" content="Fortis AML Consulting">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fortis.css">
+<script src="../assets/fortis-core.js"></script>
+</head>
+<body class="p-savings">
+<div class="wrap">
+  <header class="brandbar">
+    <a class="logo" href="https://fortisamlconsulting.com/" target="_blank" rel="noopener" aria-label="Fortis AML Consulting home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 9v13c0 11.5 7.7 19.7 18 23 10.3-3.3 18-11.5 18-23V9z" fill="none" stroke="#B8893B" stroke-width="2.4"/><path d="M18 14h13M18 14v20M18 23h10" fill="none" stroke="#B8893B" stroke-width="3" stroke-linecap="round"/></svg>
+      <div><div class="w1">FORTIS</div><div class="w2">COMPLIANCE SHIELD PARTNERS</div></div>
+    </a>
+    <div class="tagline">COMPLIANCE TODAY<br>FOR A STRONGER TOMORROW</div>
+    <div class="values">Expertise<span>·</span>Clarity<span>·</span>Confidence</div>
+  </header>
+
+  <main class="qwrap">
+    <section class="qhero">
+      <div class="time"><svg class="ic" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30-second check</div>
+      <h1>How much can you save on compliance?</h1>
+      <p class="lede">Compare hiring a full-time compliance officer with a Fortis fractional CAMLO. Two clicks, instant answer.</p>
+    </section>
+
+    <div class="qcard">
+      <form class="inputs" id="inputs" onsubmit="return false">
+        <fieldset class="step">
+          <legend><span class="badge" aria-hidden="true">1</span>Monthly transaction volume (CAD)</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="vol" value="under_1m" checked><span>Under $1M</span></label>
+            <label class="chip"><input type="radio" name="vol" value="1m_5m"><span>$1M–$5M</span></label>
+            <label class="chip"><input type="radio" name="vol" value="5m_25m"><span>$5M–$25M</span></label>
+            <label class="chip"><input type="radio" name="vol" value="25m_plus"><span>$25M+</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="step">
+          <legend><span class="badge" aria-hidden="true">2</span>Do you have an AML program today?</legend>
+          <div class="chips three">
+            <label class="chip"><input type="radio" name="prog" value="none" checked><span>No</span></label>
+            <label class="chip"><input type="radio" name="prog" value="partial"><span>Partly</span></label>
+            <label class="chip"><input type="radio" name="prog" value="yes"><span>Yes</span></label>
+          </div>
+        </fieldset>
+        <div class="step">
+          <h2><span class="badge" aria-hidden="true">3</span><label for="salNum">In-house officer salary</label> <span style="font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:500">(optional)</span></h2>
+          <div class="sal">
+            <div class="sal-in"><span aria-hidden="true">$</span><input id="salNum" inputmode="numeric" autocomplete="off" aria-describedby="salSrc"></div>
+            <span>per year</span>
+          </div>
+          <input type="range" id="sal" step="1000" aria-label="In-house compliance officer salary">
+          <p class="src" id="salSrc">Default: PayScale 2026 median base pay for a Chief Compliance Officer with AML skills in Toronto. Type an amount or move the slider to match your market.</p>
+          <details class="adv" id="adv">
+            <summary>Adjust assumptions</summary>
+            <div class="adv-row">
+              <div class="t"><label for="load">Payroll taxes &amp; benefits</label><b id="loadV"></b></div>
+              <input type="range" id="load" min="10" max="35" step="1">
+            </div>
+            <div class="adv-row">
+              <div class="t"><label for="fee">One-time recruiting fee</label><b id="feeV"></b></div>
+              <input type="range" id="fee" min="0" max="30" step="1">
+            </div>
+          </details>
+        </div>
+      </form>
+
+      <div class="out">
+        <div class="k" id="saveK">Your estimated savings in year one</div>
+        <div class="save" id="save" aria-live="polite" aria-atomic="true">$0</div>
+        <div class="save-sub" id="saveSub"></div>
+        <div><span class="pct" id="pct"></span></div>
+        <div class="horizon" role="group" aria-label="Time horizon">
+          <button type="button" data-h="1" aria-pressed="true">Year 1</button>
+          <button type="button" data-h="3" aria-pressed="false">3 years</button>
+        </div>
+        <div class="bars">
+          <div class="b in"><div class="t"><span id="inL">Full-time hire (year 1)</span><span id="inV"></span></div><div class="tr"><i id="inB"></i></div></div>
+          <div class="b fo"><div class="t"><span id="foL">Fortis fractional CAMLO</span><span id="foV"></span></div><div class="tr"><i id="foB"></i></div></div>
+        </div>
+        <div class="setup-note" id="setupNote"></div>
+        <button class="btn btn-gold" type="button" id="btnPdf" data-pdf><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Save my results (PDF)</button>
+        <a class="btn btn-ghostw" href="https://fortisamlconsulting.com/contact-us/" target="_blank" rel="noopener" id="btnBook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book a free consultation</a>
+        <button class="ghost" type="button" id="btnShare">Copy link to these results</button>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div class="ben"><div class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></svg></div><b>Start fast</b><span>No long search for a rare, senior compliance hire.</span></div>
+      <div class="ben"><div class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M21 20a6 6 0 0 0-5-5.9"/></svg></div><b>A team, not one person</b><span>Senior AML experts with CAMLO experience, with no gap during vacations or turnover.</span></div>
+      <div class="ben"><div class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div><b>Exam-ready</b><span>Policies, reports and records kept ready for FINTRAC.</span></div>
+      <div class="ben"><div class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M10 20V9M15 20v-8M20 20V4"/></svg></div><b>Scales with you</b><span>Move up a support tier as your volume grows.</span></div>
+    </div>
+    <p class="assume" id="assume"></p>
+  </main>
+  <p class="foot">© Fortis AML Consulting · <a href="https://fortisamlconsulting.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
+</div>
+
+<!-- Lead modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <div id="formState">
+      <h2 id="mTitle">Save your results</h2>
+      <p class="intro">Get a one-page PDF with your savings estimate and next steps.</p>
+      <div class="summary-mini" id="mSummary"></div>
+      <form id="leadForm" novalidate>
+        <div class="f"><label for="fName">Full name *</label><input class="txt" id="fName" autocomplete="name" maxlength="120"><div class="err"></div></div>
+        <div class="f"><label for="fEmail">Work email *</label><input class="txt" id="fEmail" type="email" autocomplete="email" maxlength="160"><div class="err"></div></div>
+        <div class="f"><label for="fCompany">Company (optional)</label><input class="txt" id="fCompany" autocomplete="organization" maxlength="160"><div class="err"></div></div>
+        <div class="f"><label class="consent"><input type="checkbox" id="fConsent"><span>I agree to be contacted by Fortis about my results. See our <a href="https://fortisamlconsulting.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. *</span></label><div class="err"></div></div>
+        <input type="text" id="fHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-gold" type="submit" id="fSubmit">Download my PDF</button>
+      </form>
+    </div>
+    <div id="doneState" class="done-state hide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+      <h2>Your results are ready</h2>
+      <p class="intro">Check your downloads. Want an exact plan for your business? Book a free consultation.</p>
+      <a class="btn btn-gold" href="https://fortisamlconsulting.com/contact-us/" target="_blank" rel="noopener" data-ev="book_call_clicked">Book a free consultation</a>
+      <button class="btn btn-line" type="button" data-close>Back to the calculator</button>
+      <p class="demo" id="demoNote"></p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var F=Fortis,C=F.CONFIG,S=C.savings,$=F.$,fmt=F.fmt;
+F.init("crypto_savings");
+
+var sal=$("sal"),salNum=$("salNum"),load=$("load"),fee=$("fee");
+sal.min=S.salary_min;sal.max=S.salary_max;sal.value=S.default_salary;
+load.value=Math.round(S.benefits_load*100);fee.value=Math.round(S.recruiting_fee*100);
+var horizon=1,R=null,started=false;
+
+function val(n){return document.querySelector('input[name="'+n+'"]:checked').value}
+function setVal(n,v){var el=document.querySelector('input[name="'+n+'"][value="'+v+'"]');if(el)el.checked=true}
+function clampSal(n){return Math.min(500000,Math.max(30000,n||S.default_salary))}
+
+/* ---- state in the URL hash, so results can be shared ---- */
+function readHash(){
+  var h=new URLSearchParams(location.hash.slice(1));
+  if(h.get("v"))setVal("vol",h.get("v"));
+  if(h.get("p"))setVal("prog",h.get("p"));
+  if(h.get("s"))sal.value=clampSal(+h.get("s"));
+  if(h.get("b")){load.value=+h.get("b");$("adv").open=true}
+  if(h.get("r")){fee.value=+h.get("r");$("adv").open=true}
+  if(h.get("h")==="3")horizon=3;
+  salNum.value=(+sal.value).toLocaleString("en-CA");
+  salNum._sal=+sal.value;
+}
+function hashStr(){
+  var h=new URLSearchParams({v:R.vol,p:R.prog,s:R.sal});
+  if(+load.value!==Math.round(S.benefits_load*100))h.set("b",load.value);
+  if(+fee.value!==Math.round(S.recruiting_fee*100))h.set("r",fee.value);
+  if(horizon===3)h.set("h","3");
+  return h.toString();
+}
+var hashT;
+function writeHash(){clearTimeout(hashT);hashT=setTimeout(function(){try{history.replaceState(null,"","#"+hashStr())}catch(e){}},250)}
+
+function calc(){
+  var s=salNum._sal||+sal.value,bl=+load.value/100,rf=+fee.value/100,r=S.annual_raise;
+  var vol=val("vol"),prog=val("prog"),tier=C.monthly[S.tiers[vol]],setup=S.setup[prog];
+  var in1=s*(1+bl)+s*rf,fo1=tier.price*12;
+  var in3=s*(1+bl)*(1+(1+r)+(1+r)*(1+r))+s*rf,fo3=tier.price*36;
+  return {sal:s,load:bl,fee:rf,vol:vol,prog:prog,tier:tier,setup:setup,
+    in1:in1,fo1:fo1,save1:in1-fo1,in3:in3,fo3:fo3,save3:in3-fo3,
+    pct1:in1?Math.round((in1-fo1)/in1*100):0,pct3:in3?Math.round((in3-fo3)/in3*100):0};
+}
+function render(){
+  R=calc();
+  var three=horizon===3,inh=three?R.in3:R.in1,fo=three?R.fo3:R.fo1,save=inh-fo,pct=three?R.pct3:R.pct1,from=R.tier.from?"From ":"";
+  $("loadV").textContent=load.value+"%";$("feeV").textContent=fee.value+"%";
+  document.querySelectorAll(".horizon button").forEach(function(b){b.setAttribute("aria-pressed",String(+b.dataset.h===horizon))});
+  var sv=$("save");
+  if(save>0){
+    $("saveK").textContent=three?"Your estimated savings over 3 years":"Your estimated savings in year one";
+    sv.classList.remove("even");F.countTo(sv,save);
+    $("saveSub").textContent="That is about "+fmt(save/(three?36:12))+" per month back in your business.";
+    $("pct").textContent=pct+"% lower than a full-time hire";
+  } else {
+    $("saveK").textContent=three?"Over 3 years":"In year one";
+    sv.classList.add("even");sv._v=null;sv.textContent="About the same cost";
+    $("saveSub").textContent="At this salary a full-time hire costs about the same or less. With Fortis you still get a team of senior AML experts, no hiring risk and no gap during vacations or turnover.";
+    $("pct").textContent="";
+  }
+  $("inL").textContent="Full-time hire ("+(three?"3 years":"year 1")+")";
+  $("inV").textContent=fmt(inh);
+  $("foL").textContent="Fortis "+R.tier.name;
+  $("foV").textContent=from+fmt(fo);
+  var mx=Math.max(inh,fo);
+  $("inB").style.width=(inh/mx*100)+"%";$("foB").style.width=(fo/mx*100)+"%";
+  $("setupNote").textContent="Program setup is needed either way. With Fortis: "+fmt(R.setup.price)+" one time ("+R.setup.name+").";
+  $("assume").textContent="How we calculate: a full-time hire = salary + "+load.value+"% for payroll taxes and benefits + a one-time "+fee.value+"% recruiting fee"+(three?" (3-year view adds a "+Math.round(S.annual_raise*100)+"% annual raise)":"")+". Fortis = "+R.tier.name+" at "+(R.tier.from?"from ":"")+fmt(R.tier.price)+"/month. Estimates are for planning only and exclude taxes. Final pricing depends on your business model, volumes, customer risk profile and regulatory complexity.";
+  writeHash();
+}
+
+/* ---- inputs ---- */
+function onFirst(){if(!started){started=true;F.track("calculator_start")}}
+$("inputs").addEventListener("change",function(){onFirst();render()});
+sal.addEventListener("input",function(){onFirst();salNum._sal=+sal.value;salNum.value=(+sal.value).toLocaleString("en-CA");render()});
+[load,fee].forEach(function(x){x.addEventListener("input",function(){onFirst();render()})});
+salNum.addEventListener("input",function(){
+  var n=+salNum.value.replace(/[^\d]/g,"");
+  if(n>=10000){onFirst();salNum._sal=clampSal(n);sal.value=Math.min(S.salary_max,Math.max(S.salary_min,salNum._sal));render()}
+});
+salNum.addEventListener("blur",function(){var n=+salNum.value.replace(/[^\d]/g,"");salNum._sal=clampSal(n);sal.value=Math.min(S.salary_max,Math.max(S.salary_min,salNum._sal));salNum.value=salNum._sal.toLocaleString("en-CA");render()});
+salNum.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();salNum.blur()}});
+document.querySelectorAll(".horizon button").forEach(function(b){b.addEventListener("click",function(){horizon=+b.dataset.h;F.track("horizon_changed",{years:horizon});render()})});
+$("btnBook").addEventListener("click",function(){F.track("book_call_clicked",{savings:Math.round(R.save1)})});
+$("btnShare").addEventListener("click",function(){
+  F.copy(F.shareUrl(hashStr())).then(function(){F.toast("Link copied")},function(){F.toast("Could not copy the link")});
+  F.track("share_clicked");
+});
+
+/* ---- PDF ---- */
+function buildPdf(J,lead){
+  var P=F.PDF,T=F.pdfText,doc=new J({unit:"pt",format:"letter"}),W=612,M=48,y;
+  F.pdfHeader(doc,"Compliance Savings Summary");
+  y=130;doc.setTextColor.apply(doc,P.navy);doc.setFont("times","bold");doc.setFontSize(22);doc.text("Your compliance savings estimate",M,y);
+  y+=18;doc.setFont("helvetica","normal");doc.setFontSize(10.5);doc.setTextColor.apply(doc,P.muted);doc.text(T("Prepared for "+lead.name+(lead.company?", "+lead.company:"")),M,y);
+  y+=22;doc.setFillColor.apply(doc,P.navy);doc.roundedRect(M,y,W-2*M,110,8,8,"F");
+  var pos=R.save1>0;
+  doc.setTextColor(255,255,255);doc.setFont("helvetica","normal");doc.setFontSize(10.5);doc.text(pos?"Estimated savings in year one":"Year-one cost comparison",W/2,y+26,{align:"center"});
+  doc.setTextColor(226,190,115);doc.setFont("times","bold");doc.setFontSize(pos?40:26);doc.text(pos?fmt(R.save1):"About the same cost",W/2,y+66,{align:"center"});
+  doc.setTextColor(255,255,255);doc.setFont("helvetica","normal");doc.setFontSize(10.5);
+  doc.text(pos?(R.pct1+"% lower than a full-time hire  |  about "+fmt(R.save1/12)+" per month  |  "+(R.save3>0?fmt(R.save3)+" over 3 years":"")):"Plus a full team, no hiring risk and no coverage gaps",W/2,y+92,{align:"center"});
+  y+=140;
+  var mx=Math.max(R.in1,R.fo1);
+  [["Full-time hire (year 1)",R.in1,[180,188,200],""],["Fortis "+R.tier.name+" (year 1)",R.fo1,P.gold,R.tier.from?"From ":""]].forEach(function(b){
+    doc.setTextColor.apply(doc,P.navy);doc.setFont("helvetica","bold");doc.setFontSize(10.5);doc.text(T(b[0]),M,y);
+    doc.setFont("times","bold");doc.setFontSize(13);doc.text(b[3]+fmt(b[1]),W-M,y,{align:"right"});
+    doc.setFillColor.apply(doc,P.line);doc.roundedRect(M,y+8,W-2*M,10,5,5,"F");doc.setFillColor.apply(doc,b[2]);doc.roundedRect(M,y+8,(W-2*M)*b[1]/mx,10,5,5,"F");
+    y+=42;
+  });
+  doc.setTextColor.apply(doc,P.gold);doc.setFont("helvetica","bold");doc.setFontSize(10);doc.text("YOUR INPUTS",M,y);y+=16;
+  var vl={under_1m:"Under $1M","1m_5m":"$1M - $5M","5m_25m":"$5M - $25M","25m_plus":"$25M+"}[R.vol],pl={none:"No",partial:"Partly",yes:"Yes"}[R.prog];
+  [["Monthly transaction volume",vl],["AML program today",pl],["In-house officer salary used",fmt(R.sal)],["Payroll taxes & benefits",Math.round(R.load*100)+"% of salary"],["Recruiting fee (one time)",Math.round(R.fee*100)+"% of salary"],["One-time program setup with Fortis",fmt(R.setup.price)+" ("+R.setup.name+")"]].forEach(function(a){doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor.apply(doc,P.muted);doc.text(T(a[0]),M,y);doc.setFont("helvetica","normal");doc.setTextColor.apply(doc,P.navy);doc.text(T(a[1]),M+210,y);y+=15});
+  y+=12;doc.setTextColor.apply(doc,P.gold);doc.setFont("helvetica","bold");doc.setFontSize(10);doc.text("WHAT YOU GET WITH FORTIS",M,y);y+=16;
+  doc.setTextColor.apply(doc,P.navy);doc.setFont("helvetica","normal");doc.setFontSize(10.5);
+  ["Start fast, with no long search for a senior compliance hire","A team of senior AML experts, with no gap during vacations or turnover","Policies, reports and records kept ready for FINTRAC","Support that scales as your volume grows"].forEach(function(t){doc.text("•  "+t,M,y);y+=15});
+  y+=14;F.pdfCta(doc,y,"Next step: book a free consultation","Get an exact plan and price for your business.");
+  F.pdfFooter(doc,"How we calculate: full-time hire = salary + payroll taxes and benefits + one-time recruiting fee. Default salary: PayScale 2026 median base pay, Chief Compliance Officer with AML skills, Toronto. Fortis = monthly support fee x 12. Estimates are for planning only and exclude applicable taxes. Final pricing depends on your business model, volumes, customer risk profile and regulatory complexity.");
+  return doc.output("blob");
+}
+
+/* ---- modal / lead ---- */
+var modal=F.modal($("modal"));
+$("btnPdf").addEventListener("click",function(e){
+  $("formState").classList.remove("hide");$("doneState").classList.add("hide");
+  $("mSummary").innerHTML=R.save1>0?"Estimated savings: <b>"+fmt(R.save1)+"</b> in year one":"Year one: full-time hire <b>"+fmt(R.in1)+"</b> vs. Fortis <b>"+(R.tier.from?"from ":"")+fmt(R.fo1)+"</b>";
+  modal.open(e.currentTarget);F.loadPdf().catch(function(){});F.track("pdf_clicked");
+});
+$("leadForm").addEventListener("submit",function(e){
+  e.preventDefault();if($("fHp").value)return;
+  var name=$("fName").value.trim(),em=$("fEmail").value.trim(),ok=true,first=null;
+  F.setErr("fName",name?"":"Please enter your name.");if(!name){ok=false;first="fName"}
+  var eb=!F.emailOk(em);F.setErr("fEmail",eb?"Please enter a valid work email.":"");if(eb){ok=false;first=first||"fEmail"}
+  var c=$("fConsent").checked;F.setErr("fConsent",c?"":"Please confirm we may contact you.");if(!c){ok=false;first=first||"fConsent"}
+  if(!ok){$(first).focus();return}
+  var btn=$("fSubmit");btn.disabled=true;btn.classList.add("busy");btn.textContent="Preparing your PDF…";
+  var lead={name:name,email:em,company:$("fCompany").value.trim()||null,consent:true,consent_text:"I agree to be contacted by Fortis about my results."};
+  var data={intent:"savings_pdf",calculator:"crypto_savings",monthly_volume_band:R.vol,aml_program:R.prog,inhouse_salary_cad:Math.round(R.sal),
+    benefits_load:R.load,recruiting_fee:R.fee,inhouse_year1_cad:Math.round(R.in1),recommended_support:R.tier.name,
+    fortis_year1_support_cad:R.fo1,setup_cad:R.setup.price,savings_year1_cad:Math.round(R.save1),savings_3yr_cad:Math.round(R.save3),
+    share_url:F.shareUrl(hashStr()),pricing_version:C.pricing_version,timestamp:new Date().toISOString(),source:F.source(),lead:lead};
+  var sending=F.sendLead(data);
+  F.track("pdf_submitted",{savings:Math.round(R.save1)});
+  F.loadPdf().then(function(J){F.download(buildPdf(J,lead),"Fortis-Compliance-Savings"+(lead.company?"-"+F.safeFile(lead.company):"")+".pdf")})
+    .catch(function(){F.toast("The PDF tool did not load. Please check your connection and try again.")})
+    .then(function(){return sending}).then(function(res){
+      $("demoNote").textContent=res.demo?"Demo mode: set lead_endpoint in assets/fortis-core.js to receive these submissions.":(res.ok?"":"We could not send your details automatically. Please use the Book button.");
+      $("formState").classList.add("hide");$("doneState").classList.remove("hide");
+      btn.disabled=false;btn.classList.remove("busy");btn.textContent="Download my PDF";
+      $("doneState").querySelector("a").focus({preventScroll:F.embed});F.sendSize();
+    });
+});
+
+readHash();render();
+window.addEventListener("hashchange",function(){readHash();render()});
+})();
+</script>
+</body>
+</html>

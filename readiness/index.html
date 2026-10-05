@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crypto Compliance Readiness Scorecard | Fortis AML Consulting</title>
+<meta name="description" content="Is your crypto business ready for a FINTRAC examination? Take the free 2-minute readiness check and get your score, gaps, 90-day fix plan and cost.">
+<meta name="theme-color" content="#0F1B33">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is your crypto business ready for FINTRAC? | Fortis">
+<meta property="og:description" content="Free 2-minute readiness check: your compliance score, gaps, a 90-day fix plan and the cost to close them.">
+<meta property="og:site_name" content="Fortis AML Consulting">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fortis.css">
+<script src="../assets/fortis-core.js"></script>
+</head>
+<body class="p-readiness">
+<div class="wrap">
+  <header class="brandbar">
+    <a class="logo" href="https://fortisamlconsulting.com/" target="_blank" rel="noopener" aria-label="Fortis AML Consulting home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 9v13c0 11.5 7.7 19.7 18 23 10.3-3.3 18-11.5 18-23V9z" fill="none" stroke="#B8893B" stroke-width="2.4"/><path d="M18 14h13M18 14v20M18 23h10" fill="none" stroke="#B8893B" stroke-width="3" stroke-linecap="round"/></svg>
+      <div><div class="w1">FORTIS</div><div class="w2">COMPLIANCE SHIELD PARTNERS</div></div>
+    </a>
+    <div class="tagline">COMPLIANCE TODAY<br>FOR A STRONGER TOMORROW</div>
+    <div class="values">Expertise<span>·</span>Clarity<span>·</span>Confidence</div>
+  </header>
+
+  <main>
+  <!-- INTRO -->
+  <div id="vIntro">
+    <section class="hero">
+      <div>
+        <h1>Is your crypto business ready for FINTRAC?</h1>
+        <p class="lede">Take the free 2-minute readiness check. Get your compliance score, a clear list of gaps, a 90-day fix plan and the estimated cost to close them.</p>
+      </div>
+      <div class="hero-card">
+        <svg viewBox="0 0 80 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M40 6 14 15v19c0 17 11.2 29 26 34 14.8-5 26-17 26-34V15z"/><path d="m28 39 8 8 16-17"/></svg>
+        <div><h2>Know before they ask</h2><p>Find your weak spots before a FINTRAC examination does.</p></div>
+      </div>
+    </section>
+    <div class="stage">
+      <div class="intro-card">
+        <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p style="margin:0"><b>12 questions</b><span>About 2 minutes. No sign-up to see your score.</span></p></div>
+        <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M10 20V9M15 20v-8M20 20V4"/></svg></span><p style="margin:0"><b>Instant score</b><span>See how ready you are across 4 compliance areas.</span></p></div>
+        <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span><p style="margin:0"><b>Fix plan + PDF</b><span>A 90-day roadmap with costs you can share with your team.</span></p></div>
+      </div>
+      <button class="btn btn-gold start" id="btnStart" type="button">Start the readiness check →</button>
+      <button class="ghost resume hide" id="btnResume" type="button"></button>
+    </div>
+  </div>
+
+  <!-- WIZARD -->
+  <div id="vWiz" class="stage hide" style="padding-top:30px">
+    <div class="wiz">
+      <div class="pillars" id="pillars" aria-hidden="true"></div>
+      <div class="qnum" id="qNum"></div>
+      <h2 id="qText" tabindex="-1"></h2>
+      <p class="why" id="qWhy"></p>
+      <div class="answers" id="answers" role="group" aria-labelledby="qText"></div>
+      <div class="wiz-nav">
+        <button class="ghost" id="btnBack" type="button">← Back</button>
+        <span style="font-size:13.5px;color:var(--muted)" id="qCount" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="vRes" class="hide" style="padding-top:30px">
+    <h1 id="resTitle" tabindex="-1" style="font-size:clamp(28px,4.4vw,44px);margin-bottom:20px;outline:none">Your Crypto Compliance Readiness</h1>
+    <div class="res-top">
+      <div class="scorebox">
+        <div class="ring">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="10"/><circle id="ringArc" cx="60" cy="60" r="52" fill="none" stroke="#D3A957" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" style="transition:stroke-dashoffset 1s ease"/></svg>
+          <div class="v"><div><span id="scoreNum">0</span><small>out of 100</small></div></div>
+        </div>
+        <div class="band" id="band"></div>
+        <p id="bandText"></p>
+      </div>
+      <div class="pbox">
+        <h3>Score by area</h3>
+        <div id="pillarRes"></div>
+        <div class="unknown" id="unknownNote" hidden></div>
+      </div>
+    </div>
+
+    <section class="sec">
+      <h3>Your gaps, in priority order</h3>
+      <p class="lead">Each gap is an area a FINTRAC examiner checks. Here is what to fix and how Fortis can help.</p>
+      <div id="gapList"></div>
+    </section>
+
+    <section class="sec">
+      <h3>Your 90-day fix plan</h3>
+      <p class="lead">Start with the items that create the most regulatory risk.</p>
+      <div class="road" id="road"></div>
+    </section>
+
+    <section class="sec">
+      <h3>Estimated cost to close your gaps</h3>
+      <div class="costgrid">
+        <div class="cg"><div class="k">One-time setup</div><div class="n" id="cSetup"></div><div class="s" id="cSetupS"></div></div>
+        <div class="cg"><div class="k">Ongoing support</div><div class="n" id="cMonthly"></div><div class="s" id="cMonthlyS"></div></div>
+        <div class="cg dark"><div class="k">First-year estimate</div><div class="n" id="cYear"></div><div class="s">+ applicable taxes</div></div>
+      </div>
+      <p class="disc" id="cNotes"></p>
+      <p class="disc">This estimate is based on the information provided and is for planning purposes only. Final pricing depends on your business model, products and services, transaction volumes, jurisdictions, customer risk profile, technology environment and overall regulatory complexity. Applicable taxes are additional. This scorecard is a self-assessment, not a formal compliance review or legal advice.</p>
+      <div class="ctas">
+        <button class="btn btn-gold" type="button" id="btnPdf" data-pdf><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download full report (PDF)</button>
+        <a class="btn btn-navy" href="https://fortisamlconsulting.com/contact-us/" target="_blank" rel="noopener" id="btnBook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book a free gap review</a>
+        <button class="btn btn-line" type="button" id="btnProposal" style="margin-top:0">Request a proposal</button>
+      </div>
+      <div class="res-actions">
+        <button class="ghost" type="button" id="btnShare">Copy link to my results</button>
+        <button class="ghost" type="button" id="btnEdit">✎ Change my answers</button>
+        <button class="ghost" type="button" id="btnRetake">↺ Start over</button>
+      </div>
+    </section>
+  </div>
+  </main>
+
+  <section class="trust">
+    <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><p style="margin:0"><b>Regulatory Expertise</b><span>Canadian focus, global perspective</span></p></div>
+    <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M21 20a6 6 0 0 0-5-5.9"/></svg></span><p style="margin:0"><b>Tailored Solutions</b><span>For crypto businesses of all sizes</span></p></div>
+    <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M10 20V9M15 20v-8M20 20V4"/></svg></span><p style="margin:0"><b>Practical &amp; Scalable</b><span>From launch to growth</span></p></div>
+    <div><span class="tc"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2M14 14l2.5 2.5a1.4 1.4 0 0 0 2-2L15 11M3 11l4-4 3 1 3-2 3 1 5 5-3 3M3 11l5 5"/></svg></span><p style="margin:0"><b>Ongoing Partnership</b><span>More than compliance, a trusted advisor</span></p></div>
+  </section>
+  <p class="foot">© Fortis AML Consulting · <a href="https://fortisamlconsulting.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></p>
+</div>
+
+<!-- Lead modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="sheet">
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <div id="formState">
+      <h2 id="mTitle">Get your full readiness report</h2>
+      <p class="intro" id="mIntro"></p>
+      <div class="summary-mini" id="mSummary"></div>
+      <form id="leadForm" novalidate>
+        <div class="frow">
+          <div class="f"><label for="fFirst">First name *</label><input class="txt" id="fFirst" autocomplete="given-name" maxlength="80"><div class="err"></div></div>
+          <div class="f"><label for="fLast">Last name *</label><input class="txt" id="fLast" autocomplete="family-name" maxlength="80"><div class="err"></div></div>
+        </div>
+        <div class="f"><label for="fCompany">Company name *</label><input class="txt" id="fCompany" autocomplete="organization" maxlength="160"><div class="err"></div></div>
+        <div class="f"><label for="fEmail">Work email *</label><input class="txt" id="fEmail" type="email" autocomplete="email" maxlength="160"><div class="err"></div></div>
+        <div class="f"><label for="fPhone">Phone (optional)</label><input class="txt" id="fPhone" type="tel" autocomplete="tel" maxlength="40"><div class="err"></div></div>
+        <div class="f"><label class="consent"><input type="checkbox" id="fConsent"><span>I agree to be contacted by Fortis about my results. See our <a href="https://fortisamlconsulting.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. *</span></label><div class="err"></div></div>
+        <input type="text" id="fHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-gold" type="submit" id="fSubmit">Download my report</button>
+      </form>
+    </div>
+    <div id="doneState" class="done-state hide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+      <h2 id="doneTitle"></h2>
+      <p class="intro" id="doneText"></p>
+      <a class="btn btn-gold" href="https://fortisamlconsulting.com/contact-us/" target="_blank" rel="noopener" data-ev="book_call_clicked">Book a free gap review</a>
+      <button class="btn btn-line" type="button" data-close>Back to my results</button>
+      <p class="demo" id="demoNote"></p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var F=Fortis,C=F.CONFIG,$=F.$,fmt=F.fmt,esc=F.esc;
+F.init("crypto_readiness");
+
+var PILLARS=[["foundation","Foundation"],["risk","Risk"],["operations","Operations"],["oversight","Oversight"]];
+var QS=[
+  {id:"registration",p:"foundation",prio:"critical",q:"Is your business registered with FINTRAC as an MSB dealing in virtual currency?",why:"Crypto businesses serving Canadians must register before they start operating.",fix:["registration"],gap:"Register with FINTRAC before operating."},
+  {id:"camlo",p:"foundation",prio:"critical",q:"Have you appointed a qualified Compliance Officer (CAMLO)?",why:"Every reporting entity must name a person responsible for its compliance program.",fix:"camlo",gap:"Appoint a qualified compliance officer with real authority."},
+  {id:"policies",p:"foundation",prio:"critical",q:"Do you have written AML/ATF policies, updated in the last 12 months?",why:"Policies must be written, kept current and approved by a senior officer.",fix:["policies"],gap:"Write or update your policies to match current rules."},
+  {id:"ewra",p:"risk",prio:"high",q:"Have you documented an enterprise-wide risk assessment?",why:"You must assess and document the money laundering and terrorist financing risks of your business.",fix:["ewra"],gap:"Document your business-wide risk assessment."},
+  {id:"clientrisk",p:"risk",prio:"medium",q:"Do you risk-rate every client (for example low, medium or high)?",why:"High-risk clients need enhanced measures, so every client needs a risk rating.",fix:["clientrisk"],gap:"Set up a clear client risk-rating method."},
+  {id:"sanctions",p:"risk",prio:"high",q:"Do you screen clients for sanctions, PEPs and HIOs?",why:"Missing a politically exposed person or a sanctioned client is a common exam finding.",fix:["sanctions"],gap:"Screen all clients for sanctions, PEPs and HIOs."},
+  {id:"kyc",p:"operations",prio:"critical",q:"Do you verify identity and beneficial ownership for every client?",why:"Identity verification and beneficial ownership records are core FINTRAC requirements.",fix:["kyc"],gap:"Verify identity and beneficial ownership for every client."},
+  {id:"kyt",p:"operations",prio:"high",q:"Do you monitor transactions, including on-chain (KYT) risk?",why:"Ongoing monitoring helps you spot suspicious activity and wallets linked to illicit funds.",fix:["tm","kyt"],gap:"Monitor transactions and blockchain risk continuously."},
+  {id:"travel",p:"operations",prio:"medium",q:"Do your crypto transfers follow the travel rule?",why:"Transfers of $1,000 or more must carry sender and receiver information.",fix:["travel"],gap:"Apply the travel rule to crypto transfers."},
+  {id:"reporting",p:"operations",prio:"critical",q:"Can your team file STRs and LVCTRs correctly and on time?",why:"Missed or late reports are among the most common reasons for penalties.",fix:["str"],gap:"Make sure STRs and LVCTRs are filed correctly and on time."},
+  {id:"training",p:"oversight",prio:"medium",q:"Do staff and agents complete AML training at least once a year?",why:"You need an ongoing, written training program for everyone with compliance duties.",fix:["training"],gap:"Run regular, documented AML training."},
+  {id:"review",p:"oversight",prio:"high",q:"Has an independent effectiveness review been done in the last 2 years?",why:"An independent review of your program is required every two years.",fix:"review",gap:"Complete an independent two-year effectiveness review."}
+];
+// [value, label, dot class, points, hash code]
+var ANS=[["yes","Yes","d-yes",2,"y"],["partly","Partly","d-part",1,"p"],["no","No","d-no",0,"n"],["not_sure","Not sure","d-ns",0,"u"]];
+var STORE="fortis_readiness_v1";
+
+function show(v){["vIntro","vWiz","vRes"].forEach(function(x){$(x).classList.toggle("hide",x!==v)});if(!F.embed)window.scrollTo(0,0);else F.scrollIntoView(document.querySelector("main"))}
+function save(){try{localStorage.setItem(STORE,JSON.stringify({a:answers,i:idx}))}catch(e){}}
+function encode(){return QS.map(function(q){var a=ANS.filter(function(x){return x[0]===answers[q.id]})[0];return a?a[4]:"-"}).join("")}
+function decode(s){var o={};if(!s||s.length!==QS.length)return null;for(var i=0;i<QS.length;i++){var a=ANS.filter(function(x){return x[4]===s[i]})[0];if(!a)return null;o[QS[i].id]=a[0]}return o}
+
+/* ================= WIZARD ================= */
+var answers={},idx=0,locked=false;
+PILLARS.forEach(function(p){var d=document.createElement("div");d.className="pill";d.id="pl-"+p[0];d.innerHTML='<span class="t">'+p[1]+'</span><div class="bar"><i></i></div>';$("pillars").appendChild(d)});
+function drawQ(focus){
+  var q=QS[idx],pi=PILLARS.findIndex(function(p){return p[0]===q.p});
+  $("qNum").textContent=PILLARS[pi][1]+" · Question "+(idx+1)+" of "+QS.length;
+  $("qText").textContent=q.q;$("qWhy").textContent=q.why;
+  var done=QS.filter(function(x){return answers[x.id]}).length;
+  $("qCount").textContent=Math.round(done/QS.length*100)+"% complete";
+  $("answers").innerHTML="";
+  ANS.forEach(function(a,i){
+    var b=document.createElement("button");b.type="button";b.className="ans";
+    b.setAttribute("aria-pressed",answers[q.id]===a[0]?"true":"false");
+    b.innerHTML='<span class="dot '+a[2]+'" aria-hidden="true"></span>'+a[1]+' <kbd aria-hidden="true">'+(i+1)+'</kbd>';
+    b.addEventListener("click",function(){pick(a[0],b)});
+    $("answers").appendChild(b);
+  });
+  PILLARS.forEach(function(p){
+    var qs=QS.filter(function(x){return x.p===p[0]}),d=qs.filter(function(x){return answers[x.id]}).length;
+    var el=$("pl-"+p[0]);el.classList.toggle("on",p[0]===q.p);el.querySelector("i").style.width=(d/qs.length*100)+"%";
+  });
+  $("btnBack").disabled=idx===0;
+  if(focus!==false)$("qText").focus({preventScroll:true});
+}
+function pick(v,btn){
+  if(locked)return;
+  var q=QS[idx];answers[q.id]=v;save();
+  F.track("question_completed",{question:q.id,answer:v,index:idx+1});
+  // brief visual confirmation before advancing
+  $("answers").querySelectorAll(".ans").forEach(function(x){x.setAttribute("aria-pressed",String(x===btn))});
+  locked=true;setTimeout(function(){locked=false;next()},F.reducedMotion()?0:180);
+}
+function next(){
+  var nextIdx=-1;
+  for(var i=idx+1;i<QS.length;i++){if(!answers[QS[i].id]){nextIdx=i;break}}
+  if(nextIdx<0&&idx<QS.length-1&&editing)nextIdx=idx+1;
+  if(nextIdx>=0){idx=nextIdx;drawQ()}
+  else if(QS.every(function(q){return answers[q.id]}))results();
+  else{idx=QS.findIndex(function(q){return !answers[q.id]});drawQ()}
+}
+var editing=false;
+$("btnBack").addEventListener("click",function(){if(idx>0){idx--;save();drawQ()}});
+document.addEventListener("keydown",function(e){
+  if($("vWiz").classList.contains("hide")||e.altKey||e.ctrlKey||e.metaKey)return;
+  if(document.querySelector(".modal.open"))return;
+  var n=+e.key;if(n>=1&&n<=4){e.preventDefault();var b=$("answers").children[n-1];pick(ANS[n-1][0],b)}
+  else if(e.key==="Backspace"&&idx>0&&document.activeElement.tagName!=="INPUT"){e.preventDefault();idx--;drawQ()}
+});
+function start(){answers={};idx=0;editing=false;save();try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}F.track("calculator_start");show("vWiz");drawQ()}
+$("btnStart").addEventListener("click",start);
+$("btnRetake").addEventListener("click",function(){F.track("retake_clicked");start()});
+$("btnEdit").addEventListener("click",function(){editing=true;idx=0;show("vWiz");drawQ()});
+var resumeToResults=false;
+$("btnResume").addEventListener("click",function(){
+  F.track("calculator_resumed",{index:idx+1,complete:resumeToResults});
+  if(resumeToResults)results();else{show("vWiz");drawQ()}
+});
+
+/* ================= SCORING ================= */
+var R=null;
+function fixLabel(g){
+  if(g.fix==="camlo")return {name:"Fortis "+C.monthly.camlo.name,amt:"From "+fmt(C.monthly.camlo.price)+"/mo"};
+  if(g.fix==="review")return {name:"Independent Effectiveness Review",amt:"Quoted"};
+  return {name:g.fix.map(function(k){return C.setup[k].name}).join(" + "),amt:fmt(g.fix.reduce(function(t,k){return t+C.setup[k].price},0))};
+}
+function score(){
+  var pts=function(id){var a=ANS.filter(function(x){return x[0]===answers[id]})[0];return a?a[3]:0};
+  var total=QS.reduce(function(t,q){return t+pts(q.id)},0),pct=Math.round(total/(QS.length*2)*100);
+  var pillars=PILLARS.map(function(p){var qs=QS.filter(function(q){return q.p===p[0]});var s=qs.reduce(function(t,q){return t+pts(q.id)},0);return {id:p[0],name:p[1],pct:Math.round(s/(qs.length*2)*100)}});
+  var order={critical:0,high:1,medium:2},ansOrder={no:0,not_sure:1,partly:2};
+  var gaps=QS.filter(function(q){return answers[q.id]!=="yes"}).sort(function(a,b){return order[a.prio]-order[b.prio]||ansOrder[answers[a.id]]-ansOrder[answers[b.id]]});
+  var unknown=QS.filter(function(q){return answers[q.id]==="not_sure"}).length;
+  var setupKeys=[],camlo=false,review=false;
+  gaps.forEach(function(g){if(g.fix==="camlo")camlo=true;else if(g.fix==="review")review=true;else g.fix.forEach(function(k){if(setupKeys.indexOf(k)<0)setupKeys.push(k)})});
+  var sum=setupKeys.reduce(function(t,k){return t+C.setup[k].price},0),usePkg=sum>=C.package.price;
+  var setup=usePkg?C.package.price:sum,monthly=camlo?C.monthly.camlo.price:0;
+  var band,text;
+  if(pct>=85){band="Exam-ready";text="Strong program. Keep it current and complete your independent review on time."}
+  else if(pct>=60){band="Good foundation";text="The basics are in place, but some gaps could become exam findings."}
+  else if(pct>=35){band="Significant gaps";text="Several core requirements are missing or incomplete. Fix them before an examination."}
+  else{band="High risk";text="Key parts of a compliance program are missing. This creates real penalty risk."}
+  return {pct:pct,pillars:pillars,gaps:gaps,unknown:unknown,setupKeys:setupKeys,sum:sum,usePkg:usePkg,setup:setup,monthly:monthly,camlo:camlo,review:review,year:setup+monthly*12,band:band,text:text,
+    critical:gaps.filter(function(g){return g.prio==="critical"}).length};
+}
+function results(fromLink){
+  R=score();editing=false;save();show("vRes");
+  try{history.replaceState(null,"","#a="+encode())}catch(e){}
+  F.track("estimate_viewed",{score:R.pct,band:R.band,gaps:R.gaps.length,first_year:R.year,from_link:!!fromLink});
+  $("resTitle").focus({preventScroll:true});
+  var arc=$("ringArc"),Cc=326.7;arc.style.strokeDashoffset=Cc;setTimeout(function(){arc.style.strokeDashoffset=Cc*(1-R.pct/100)},60);
+  var el=$("scoreNum");
+  if(F.reducedMotion())el.textContent=R.pct;else{el._v=0;F.countTo(el,R.pct,function(n){return String(Math.round(n))})}
+  $("band").textContent=R.band;$("bandText").textContent=R.text;
+  $("pillarRes").innerHTML=R.pillars.map(function(p){var lbl=p.pct>=85?"Strong":p.pct>=60?"Needs attention":"Weak";return '<div class="prow"><div class="top"><span>'+p.name+'</span><span>'+p.pct+'%</span></div><div class="track" role="img" aria-label="'+p.name+' '+p.pct+' percent"><i class="'+(p.pct<60?"low":"")+'" data-w="'+p.pct+'"></i></div><div class="lbl">'+lbl+'</div></div>'}).join("");
+  setTimeout(function(){document.querySelectorAll("#pillarRes i").forEach(function(i){i.style.width=i.getAttribute("data-w")+"%"})},60);
+  var un=$("unknownNote");un.hidden=!R.unknown;un.textContent=R.unknown?"You answered “Not sure” "+R.unknown+" time"+(R.unknown>1?"s":"")+". We count these as gaps, because an examiner will expect clear evidence.":"";
+  if(!R.gaps.length)$("gapList").innerHTML='<p class="nogaps">No gaps found. Great work. Keep your program reviewed and up to date.</p>';
+  else $("gapList").innerHTML=R.gaps.map(function(g){var f=fixLabel(g);var st=answers[g.id]==="partly"?"Partly in place":answers[g.id]==="not_sure"?"Not sure":"Missing";return '<div class="gap"><span class="prio '+g.prio+'">'+g.prio+'</span><div><b>'+esc(g.gap)+'</b><p>'+st+'. '+esc(g.why)+'</p><div class="fix">Fortis service: '+esc(f.name)+'</div></div><div class="amt">'+f.amt+'</div></div>'}).join("");
+  var ph=[["Days 1–30","Fix the critical gaps","critical"],["Days 31–60","Strengthen risk controls","high"],["Days 61–90","Complete and maintain","medium"]];
+  $("road").innerHTML=ph.map(function(p){var items=R.gaps.filter(function(g){return g.prio===p[2]});return '<div class="phase"><div class="when">'+p[0]+'</div><h4>'+p[1]+'</h4>'+(items.length?'<ul>'+items.map(function(g){return "<li>"+esc(g.gap)+"</li>"}).join("")+'</ul>':'<p class="empty">Nothing urgent here.</p>')+'</div>'}).join("");
+  $("cSetup").textContent=fmt(R.setup);
+  $("cSetupS").textContent=R.usePkg?C.package.name+" (package price)":(R.setupKeys.length?R.setupKeys.length+" targeted service"+(R.setupKeys.length>1?"s":""):"No setup work needed");
+  $("cMonthly").textContent=R.camlo?"From "+fmt(R.monthly)+"/mo":"$0";
+  $("cMonthlyS").textContent=R.camlo?C.monthly.camlo.name:"No CAMLO gap reported";
+  $("cYear").textContent=(R.camlo?"From ":"")+fmt(R.year);
+  var notes=[];
+  if(R.usePkg)notes.push("Your gaps would cost "+fmt(R.sum)+" as separate services. The complete package covers them for "+fmt(C.package.price)+(R.sum>C.package.price?", saving "+fmt(R.sum-C.package.price):"")+".");
+  if(R.review)notes.push("The Independent Effectiveness Review is scoped and quoted separately.");
+  $("cNotes").textContent=notes.join(" ");
+}
+
+/* ================= PDF ================= */
+function buildPdf(J,lead){
+  var P=F.PDF,T=F.pdfText,doc=new J({unit:"pt",format:"letter"}),W=612,H=792,M=48,y;
+  function header(){F.pdfHeader(doc,"Crypto Compliance Readiness Report",80)}
+  function need(h){if(y+h>H-64){doc.addPage();header();y=112}}
+  function label(t){need(30);doc.setTextColor.apply(doc,P.gold);doc.setFont("helvetica","bold");doc.setFontSize(10);doc.text(t,M,y);y+=18}
+  header();y=124;
+  doc.setTextColor.apply(doc,P.navy);doc.setFont("times","bold");doc.setFontSize(22);doc.text(T("Prepared for "+(lead.company||lead.first)),M,y);y+=24;
+  doc.setFillColor.apply(doc,P.navy);doc.roundedRect(M,y,170,120,8,8,"F");
+  doc.setTextColor(255,255,255);doc.setFont("times","bold");doc.setFontSize(48);doc.text(String(R.pct),M+85,y+62,{align:"center"});
+  doc.setFont("helvetica","normal");doc.setFontSize(9);doc.text("out of 100",M+85,y+78,{align:"center"});
+  doc.setTextColor(226,190,115);doc.setFont("helvetica","bold");doc.setFontSize(11);doc.text(R.band.toUpperCase(),M+85,y+100,{align:"center"});
+  var px=M+190,pw=W-M-px,py=y+6;
+  doc.setTextColor.apply(doc,P.navy);doc.setFont("helvetica","normal");doc.setFontSize(10);
+  doc.text(doc.splitTextToSize(R.text,pw),px,py);py+=30;
+  R.pillars.forEach(function(p){doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor.apply(doc,P.navy);doc.text(p.name,px,py);doc.text(p.pct+"%",W-M,py,{align:"right"});doc.setFillColor.apply(doc,P.line);doc.roundedRect(px,py+5,pw,6,3,3,"F");if(p.pct>0){doc.setFillColor.apply(doc,p.pct<60?P.red:P.gold);doc.roundedRect(px,py+5,Math.max(6,pw*p.pct/100),6,3,3,"F")}py+=21});
+  y+=140;
+  label("YOUR GAPS, IN PRIORITY ORDER");
+  if(!R.gaps.length){doc.setFont("helvetica","normal");doc.setTextColor.apply(doc,P.navy);doc.text("No gaps found.",M,y);y+=16}
+  R.gaps.forEach(function(g){
+    var f=fixLabel(g),tw=W-2*M-160,gl=doc.splitTextToSize(T(g.gap),tw),why=doc.splitTextToSize(T(g.why),tw),fl;
+    doc.setFontSize(9);fl=doc.splitTextToSize(T("Fortis: "+f.name),tw);
+    need(26+12*(gl.length+why.length+fl.length));
+    doc.setFillColor.apply(doc,g.prio==="critical"?P.red:(g.prio==="high"?P.gold:P.muted));doc.roundedRect(M,y-9,62,13,6,6,"F");
+    doc.setTextColor(255,255,255);doc.setFont("helvetica","bold");doc.setFontSize(7.5);doc.text(g.prio.toUpperCase(),M+31,y,{align:"center"});
+    doc.setTextColor.apply(doc,P.navy);doc.setFontSize(10.5);doc.text(gl,M+72,y);
+    doc.setFont("times","bold");doc.setFontSize(11);doc.text(f.amt,W-M,y,{align:"right"});
+    y+=13*gl.length;doc.setFont("helvetica","normal");doc.setFontSize(9);doc.setTextColor.apply(doc,P.muted);doc.text(why,M+72,y);y+=12*why.length;
+    doc.setTextColor.apply(doc,P.gold);doc.setFont("helvetica","bold");doc.text(fl,M+72,y);y+=12*fl.length+8;
+  });
+  label("YOUR 90-DAY FIX PLAN");
+  [["Days 1-30: fix the critical gaps","critical"],["Days 31-60: strengthen risk controls","high"],["Days 61-90: complete and maintain","medium"]].forEach(function(p){
+    var items=R.gaps.filter(function(g){return g.prio===p[1]});need(20+14*Math.max(1,items.length));
+    doc.setTextColor.apply(doc,P.navy);doc.setFont("helvetica","bold");doc.setFontSize(10.5);doc.text(p[0],M,y);y+=14;
+    doc.setFont("helvetica","normal");doc.setFontSize(10);
+    if(!items.length){doc.setTextColor.apply(doc,P.muted);doc.text("Nothing urgent here.",M+12,y);y+=14}
+    items.forEach(function(g){doc.setTextColor.apply(doc,P.navy);doc.text("•  "+T(g.gap),M+12,y);y+=14});y+=6;
+  });
+  label("ESTIMATED COST TO CLOSE YOUR GAPS");
+  need(150);
+  var cw=(W-2*M-20)/3,vals=[["One-time setup",fmt(R.setup)],["Ongoing support",R.camlo?"From "+fmt(R.monthly)+"/mo":"$0"],["First-year estimate",(R.camlo?"From ":"")+fmt(R.year)]];
+  vals.forEach(function(v,i){var x=M+i*(cw+10);if(i===2){doc.setFillColor.apply(doc,P.navy);doc.roundedRect(x,y,cw,58,6,6,"F");doc.setTextColor(255,255,255)}else{doc.setDrawColor.apply(doc,P.line);doc.roundedRect(x,y,cw,58,6,6,"S");doc.setTextColor.apply(doc,P.navy)}doc.setFont("helvetica","normal");doc.setFontSize(9);doc.text(v[0],x+12,y+18);doc.setFont("times","bold");doc.setFontSize(17);doc.text(v[1],x+12,y+42)});
+  y+=72;
+  doc.setFont("helvetica","normal");doc.setFontSize(9);doc.setTextColor.apply(doc,P.muted);
+  var n=[];if(R.usePkg)n.push("Covered by the "+C.package.name+" ("+fmt(C.package.price)+")"+(R.sum>C.package.price?", saving "+fmt(R.sum-C.package.price)+" vs. separate services":"")+".");if(R.review)n.push("Independent Effectiveness Review quoted separately.");n.push("Applicable taxes are additional.");
+  var nl=doc.splitTextToSize(n.join(" "),W-2*M);doc.text(nl,M,y);y+=12*nl.length+10;
+  need(80);F.pdfCta(doc,y,"Next step: book a free gap review with a Fortis expert","We will confirm your gaps and give you a firm, tailored plan.");
+  F.pdfFooter(doc,"Self-assessment for planning purposes only; not a formal compliance review or legal advice. Final pricing depends on your business model, products and services, transaction volumes, jurisdictions, customer risk profile, technology environment and regulatory complexity.");
+  return doc.output("blob");
+}
+
+/* ================= MODAL ================= */
+var modal=F.modal($("modal")),mode="pdf";
+function openModal(m,trigger){
+  mode=m;
+  $("formState").classList.remove("hide");$("doneState").classList.add("hide");
+  $("mTitle").textContent=m==="pdf"?"Get your full readiness report":"Request a proposal";
+  $("mIntro").textContent=m==="pdf"?"Your branded PDF report downloads right away: score, gaps, 90-day plan and costs.":"A Fortis expert will review your results and send a tailored proposal.";
+  $("fSubmit").textContent=m==="pdf"?"Download my report":"Send my request";
+  $("mSummary").innerHTML="Your score: <b>"+R.pct+"/100</b> · "+esc(R.band)+"<br>"+R.gaps.length+" gap"+(R.gaps.length===1?"":"s")+" found · first-year estimate "+(R.camlo?"from ":"")+fmt(R.year);
+  modal.open(trigger);
+  if(m==="pdf")F.loadPdf().catch(function(){});
+  F.track(m==="pdf"?"pdf_clicked":"proposal_clicked");
+}
+$("btnPdf").addEventListener("click",function(e){openModal("pdf",e.currentTarget)});
+$("btnProposal").addEventListener("click",function(e){openModal("proposal",e.currentTarget)});
+$("btnBook").addEventListener("click",function(){F.track("book_call_clicked",{score:R&&R.pct})});
+$("btnShare").addEventListener("click",function(){F.copy(F.shareUrl("a="+encode())).then(function(){F.toast("Link copied")},function(){F.toast("Could not copy the link")});F.track("share_clicked")});
+
+$("leadForm").addEventListener("submit",function(e){
+  e.preventDefault();if($("fHp").value)return;
+  var v=function(id){return $(id).value.trim()},ok=true,first=null;
+  function need(id,msg){var bad=!v(id);F.setErr(id,bad?msg:"");if(bad){ok=false;first=first||id}}
+  need("fFirst","Please enter your first name.");need("fLast","Please enter your last name.");need("fCompany","Please enter your company name.");
+  var em=v("fEmail"),eb=!F.emailOk(em);F.setErr("fEmail",eb?"Please enter a valid work email.":"");if(eb){ok=false;first=first||"fEmail"}
+  var c=$("fConsent").checked;F.setErr("fConsent",c?"":"Please confirm we may contact you.");if(!c){ok=false;first=first||"fConsent"}
+  if(!ok){$(first).focus();return}
+  var btn=$("fSubmit"),label=btn.textContent;btn.disabled=true;btn.classList.add("busy");btn.textContent=mode==="pdf"?"Preparing your report…":"Sending…";
+  var lead={first:v("fFirst"),last:v("fLast"),company:v("fCompany"),email:em,phone:v("fPhone")||null,consent:true,consent_text:"I agree to be contacted by Fortis about my results."};
+  var data={intent:mode==="pdf"?"readiness_report_download":"proposal_request",calculator:"crypto_readiness",answers:answers,score:R.pct,band:R.band,pillar_scores:R.pillars,
+    gaps:R.gaps.map(function(g){return {id:g.id,priority:g.prio,answer:answers[g.id]}}),critical_gaps:R.critical,
+    recommended_package:R.usePkg?"complete_crypto_compliance_program":null,recommended_setup_services:R.setupKeys,
+    initial_setup_cad:R.setup,monthly_support_cad:R.monthly,first_year_estimate_cad:R.year,share_url:F.shareUrl("a="+encode()),
+    pricing_version:C.pricing_version,timestamp:new Date().toISOString(),source:F.source(),lead:lead};
+  var sending=F.sendLead(data);
+  F.track(mode==="pdf"?"pdf_submitted":"proposal_submitted",{score:R.pct});
+  var work=mode==="pdf"
+    ?F.loadPdf().then(function(J){F.download(buildPdf(J,lead),"Fortis-Crypto-Readiness-Report-"+(F.safeFile(lead.company)||"Report")+".pdf")}).catch(function(){F.toast("The PDF tool did not load. Please check your connection and try again.")})
+    :Promise.resolve();
+  work.then(function(){return sending}).then(function(res){
+    if(mode==="pdf"){$("doneTitle").textContent="Your report is ready";$("doneText").textContent="Check your downloads. Want help closing these gaps? Book a free gap review with a Fortis expert."}
+    else{$("doneTitle").textContent="Thank you, "+lead.first+"!";$("doneText").textContent="A Fortis expert will review your results and contact you within one business day."}
+    $("demoNote").textContent=res.demo?"Demo mode: set lead_endpoint in assets/fortis-core.js to receive these submissions.":(res.ok?"":"We could not send your details automatically. Please use the Book button.");
+    $("formState").classList.add("hide");$("doneState").classList.remove("hide");
+    btn.disabled=false;btn.classList.remove("busy");btn.textContent=label;
+    $("doneState").querySelector("a").focus({preventScroll:F.embed});F.sendSize();
+  });
+});
+
+/* ================= BOOT: shared link > saved progress > intro ================= */
+(function boot(){
+  var h=new URLSearchParams(location.hash.slice(1)),shared=decode(h.get("a"));
+  if(shared){answers=shared;results(true);return}
+  try{var s=JSON.parse(localStorage.getItem(STORE)||"null");
+    if(s&&s.a){var n=QS.filter(function(q){return s.a[q.id]}).length;
+      if(n>0){answers=s.a;idx=Math.min(QS.length-1,Math.max(0,QS.findIndex(function(q){return !s.a[q.id]})));
+        if(n===QS.length){idx=0;resumeToResults=true;$("btnResume").textContent="See my last results →"}
+        else $("btnResume").textContent="Resume where you left off (question "+(idx+1)+" of "+QS.length+") →";
+        $("btnResume").classList.remove("hide");}}
+  }catch(e){}
+})();
+})();
+</script>
+</body>
+</html>
